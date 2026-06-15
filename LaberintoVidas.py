@@ -70,3 +70,36 @@ def laberinto(lab, res, f, c, vida, ff, cf):
             return False
 
     return False
+
+# LABERINTO 9*9
+
+lab = [
+    [1, 1, 1, 1, 0, 1, 1, 1, 1],
+    [-2, 0, 0, -1, 0, 1, 0, 1, 0],
+    [1, 1, 0, 1, 1, 1, 0, 1, 0],
+    [0, 1, 0, -1, 0, 0, 0, -1, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1, 0],
+    [-1, 0, 0, 0, 0, 0, 0, 1, 1],
+    [1, 1, 1, 1, -1, 1, 1, 1, 0],
+    [1, 0, 0, 1, 0, 1, 0, 1, 0],
+    [1, 1, -1, 1, 1, 1, 0, 1, 1]
+]
+
+res = [[0 for _ in range(9)] for _ in range(9)]
+
+# Inicio 
+fi, ci = 8, 0
+
+# Fin 
+ff, cf = 0, 0
+
+vida_inicial = 3
+
+print("LABERINTO ORIGINAL:")
+imprimir(lab)
+
+if laberinto(lab, res, fi, ci, vida_inicial, ff, cf):
+    print("El ratón logró salir")
+else:
+    print("No hay salida posible")
+
